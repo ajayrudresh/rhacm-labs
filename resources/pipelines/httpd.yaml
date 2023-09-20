@@ -16,6 +16,7 @@ spec:
       labels:
         app: httpd-app
     spec:
+      automountServiceAccountToken: false
       containers:
       - image: registry.redhat.io/ubi9/httpd-24:latest
         name: httpd-24
