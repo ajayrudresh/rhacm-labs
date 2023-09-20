@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: httpd-app
+  name: httpd-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd-app
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: httpd-app
+    spec:
+      containers:
+      - image: registry.redhat.io/ubi9/httpd-24:latest
+        name: httpd-24
